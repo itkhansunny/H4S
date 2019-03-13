@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 13 03 2019, 1:35:11 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 13 03 2019, 2:08:36 PM
+ * Last Modified: 13 03 2019, 3:51:19 PM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -31,25 +31,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Standard iPhone Touch Icon-->
         <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
         <!-- Styles -->
-        <link href="assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
-        <link href="assets/css/lib/chartist/chartist.min.css" rel="stylesheet">
-        <link href="assets/css/lib/font-awesome.min.css" rel="stylesheet">
-        <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
-        <link href="assets/css/lib/owl.carousel.min.css" rel="stylesheet" />
-        <link href="assets/css/lib/owl.theme.default.min.css" rel="stylesheet" />
-        <link href="assets/css/lib/weather-icons.css" rel="stylesheet" />
-        <link href="assets/css/lib/menubar/sidebar.css" rel="stylesheet">
-        <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/lib/helper.css" rel="stylesheet">
-        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="<?php echo base_url('assets/css/lib/calendar2/pignose.calendar.min.css'); ?>" rel="stylesheet">
+        <link href="<?php echo base_url('assets/css/lib/chartist/chartist.min.css'); ?>" rel="stylesheet">
+        <link href="<?php echo base_url('assets/css/lib/font-awesome.min.css'); ?>" rel="stylesheet">
+        <link href="<?php echo base_url('assets/css/lib/themify-icons.css'); ?>" rel="stylesheet">
+        <link href="<?php echo base_url('assets/css/lib/owl.carousel.min.css'); ?>" rel="stylesheet" />
+        <link href="<?php echo base_url('assets/css/lib/owl.theme.default.min.css'); ?>" rel="stylesheet" />
+        <link href="<?php echo base_url('assets/css/lib/weather-icons.css'); ?>" rel="stylesheet" />
+        <link href="<?php echo base_url('assets/css/lib/menubar/sidebar.css'); ?>" rel="stylesheet">
+        <link href="<?php echo base_url('assets/css/lib/bootstrap.min.css'); ?>" rel="stylesheet">
+        <link href="<?php echo base_url('assets/css/lib/helper.css'); ?>" rel="stylesheet">
+        <link href="<?php echo base_url('assets/css/style.css'); ?>" rel="stylesheet">
     </head>
-
     <body>
 	<?php $this->load->view('sidebar'); ?>
 	<?php $this->load->view('head'); ?>
-
 		<div class="content-wrap">
             <div class="main">
                 <div class="container-fluid">
-                    <!-- /# row -->
                     <section id="main-content">
