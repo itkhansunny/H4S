@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 13 03 2019, 5:01:46 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 17 03 2019, 5:28:57 PM
+ * Last Modified: 18 03 2019, 12:20:35 AM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -234,9 +234,13 @@ $this->load->view('header');
 						</div>
 						<hr>
 						<div class="form-group row">
-							<label class="col-lg-4 col-form-label" for="photo">Photo <span class="text-danger">*</span></label>
+							<label class="col-lg-4 col-form-label" for="confirm-password">Photo <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="file" class="form-control" id="photo" name="photo">
+								<div id="imagePreview"></div>
+								<div class="upload-btn-wrapper">
+									<button class="btn btn-success">Chose a file</button>
+									<input id="imageUpload"  type="file" name="myfile"/>
+								</div>
 							</div>
 						</div>
 						<hr>

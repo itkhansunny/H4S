@@ -3,7 +3,7 @@
  * Created Date: 17 03 2019, 4:51:59 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 17 03 2019, 4:53:46 PM
+ * Last Modified: 18 03 2019, 12:23:32 AM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -17,4 +17,26 @@
 .datepicker td, .datepicker th {
 	width: 1.5em;
 	height: 1.5em;
+}
+
+/* Upload photo preview */
+#imagePreview {
+	background-position: center center;
+	background-size: cover;
+	display: inline-block;
+	height: 180px;
+	width: 180px;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }
