@@ -1,0 +1,20 @@
+/*
+ * File: custom.css
+ * Created Date: 17 03 2019, 4:51:59 PM
+ * Author: Khan Sunny
+ * -----
+ * Last Modified: 17 03 2019, 4:53:46 PM
+ * Modified By: Khan Sunny
+ * -----
+ * 
+ */
+
+ /* Bootstrap Date pciker */
+.datepicker td:last-child, .datepicker th:last-child{
+	text-align: center
+}
+
+.datepicker td, .datepicker th {
+	width: 1.5em;
+	height: 1.5em;
+}

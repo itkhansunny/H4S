@@ -17,3 +17,9 @@
 2. Fix 404 problems for Welcome controller
 3. Add Home and Members modules
 4. Config CHANGELOG and README 
+
+### 0.0.3 - [[16.03.2019]]()
+
+1. Add validation with phone and date
+2. Add validation message
+3. Add custom.css and custom.js files

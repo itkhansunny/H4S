@@ -7,6 +7,7 @@
 
 * 0.0.1 -- [10-03-2019]() - Initial commit
 * 0.0.2 -- [13-03-2019]() - Add Modules Home, Members & Welcome
+* 0.0.3 -- [17-03-2019]() - Work with add members form fontend
 
 
 ## Change Log

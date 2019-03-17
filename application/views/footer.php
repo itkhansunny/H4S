@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 13 03 2019, 1:35:27 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 13 03 2019, 3:48:14 PM
+ * Last Modified: 17 03 2019, 5:28:34 PM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -25,26 +25,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <!-- jquery vendor -->
         <script src="<?php echo base_url('assets/js/lib/jquery.min.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/jquery.nanoscroller.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/jquery.nanoscroller.min.js'); ?>"></script>
+		
         <!-- nano scroller -->
         <script src="<?php echo base_url('assets/js/lib/menubar/sidebar.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/preloader/pace.min.js'); ?>"></script>
-        <!-- sidebar -->
-        <script src="<?php echo base_url('assets/js/lib/bootstrap.min.js'); ?>"></script><script src="assets/js/scripts.js"></script>
-        <!-- bootstrap -->
-        <script src="<?php echo base_url('assets/js/lib/calendar-2/moment.latest.min.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/calendar-2/pignose.calendar.min.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/calendar-2/pignose.init.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/weather/jquery.simpleWeather.min.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/weather/weather-init.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/circle-progress/circle-progress.min.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/circle-progress/circle-progress-init.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/chartist/chartist.min.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/sparklinechart/jquery.sparkline.min.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/sparklinechart/sparkline.init.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/owl-carousel/owl.carousel.min.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/lib/owl-carousel/owl.carousel-init.js'); ?>"></script>
-        <!-- scripit init-->
-    	<script src="<?php echo base_url('assets/js/dashboard2.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/preloader/pace.min.js'); ?>"></script>
+		
+		<!-- sidebar -->
+		<script src="<?php echo base_url('assets/js/lib/select2/select2.full.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/form-validation/jquery.validate.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/form-validation/jquery.validate-init.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/bootstrap-datepicker/bootstrap-datepicker.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/bootstrap.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/scripts.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
+		
     </body>
 </html>

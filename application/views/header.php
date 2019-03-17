@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 13 03 2019, 1:35:11 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 13 03 2019, 3:51:19 PM
+ * Last Modified: 17 03 2019, 4:53:40 PM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -38,10 +38,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <link href="<?php echo base_url('assets/css/lib/owl.carousel.min.css'); ?>" rel="stylesheet" />
         <link href="<?php echo base_url('assets/css/lib/owl.theme.default.min.css'); ?>" rel="stylesheet" />
         <link href="<?php echo base_url('assets/css/lib/weather-icons.css'); ?>" rel="stylesheet" />
-        <link href="<?php echo base_url('assets/css/lib/menubar/sidebar.css'); ?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/css/lib/menubar/sidebar.css'); ?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/css/lib/bootstrap-datepicker/bootstrap-datepicker.min.css'); ?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/lib/bootstrap.min.css'); ?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/lib/helper.css'); ?>" rel="stylesheet">
-        <link href="<?php echo base_url('assets/css/style.css'); ?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/css/style.css'); ?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/css/custom.css'); ?>" rel="stylesheet">
     </head>
     <body>
 	<?php $this->load->view('sidebar'); ?>

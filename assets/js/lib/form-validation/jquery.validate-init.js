@@ -1,4 +1,18 @@
 
+$.validator.addMethod(
+	"dateBangladesh",
+	function(value, element) {
+		return value.match(/^\d\d?\/\d\d?\/\d\d\d\d$/);
+	},
+	"Please enter a date in the format dd/mm/yyyy."
+);
+
+jQuery.validator.addMethod("phone", function (phone_number, element) {
+	phone_number = phone_number.replace(/\s+/g, "");
+	return this.optional(element) || phone_number.length > 9 &&
+		  phone_number.match(/^(?:\+?8801|008801)?[15-9]\d{8}$/);
+}, "Invalid mobile number. eg: +8801XXXXXXXXX or 008801XXXXXXXXX");
+
 var form_validation = function() {
     var e = function() {
             jQuery(".form-valide").validate({
@@ -13,92 +27,132 @@ var form_validation = function() {
                 },
                 success: function(e) {
                     jQuery(e).closest(".form-group").removeClass("is-invalid"), jQuery(e).remove()
-                },
+				},
+				
                 rules: {
-                    "val-username": {
+                    "name-bn": {
                         required: !0,
                         minlength: 3
                     },
-                    "val-email": {
+                    "name-en": {
+                        required: !0,
+                        minlength: 3
+                    },
+                    "fname": {
+                        required: !0,
+                        minlength: 3
+                    },
+                    "mname": {
+                        required: !0,
+                        minlength: 3
+                    },
+                    "mobile": {
+						required: !0,
+						phone:!0
+                    },
+                    "fbid": {
+                        required: !0,
+                        minlength: 3
+                    },
+                    "email": {
                         required: !0,
                         email: !0
                     },
-                    "val-password": {
+                    "bgroup": {
                         required: !0,
-                        minlength: 5
                     },
-                    "val-confirm-password": {
-                        required: !0,
-                        equalTo: "#val-password"
-                    },
-                    "val-select2": {
-                        required: !0
-                    },
-                    "val-select2-multiple": {
-                        required: !0,
-                        minlength: 2
-                    },
-                    "val-suggestions": {
-                        required: !0,
-                        minlength: 5
-                    },
-                    "val-skill": {
-                        required: !0
-                    },
-                    "val-currency": {
-                        required: !0,
-                        currency: ["$", !0]
-                    },
-                    "val-website": {
-                        required: !0,
-                        url: !0
-                    },
-                    "val-phoneus": {
-                        required: !0,
-                        phoneUS: !0
-                    },
-                    "val-digits": {
-                        required: !0,
-                        digits: !0
-                    },
-                    "val-number": {
-                        required: !0,
-                        number: !0
-                    },
-                    "val-range": {
-                        required: !0,
-                        range: [1, 5]
-                    },
-                    "val-terms": {
-                        required: !0
-                    }
+                    "dob":{
+						required: !0,
+						dateBangladesh:!0
+					},
+                    "gender":{
+						required: !0,
+					},
+                    "religion":{
+						required: !0,
+					},
+                    "occupation":{
+						required: !0,
+                        minlength: 3
+					},
+                    "institute":{
+						required: !0,
+                        minlength: 3
+					},
+                    "eduquali":{
+						required: !0,
+						minlength: 3
+					},
+                    "nidno":{
+						minlength: 13
+					},
+                    "per-village":{
+						required: !0,
+						minlength: 3
+					},
+                    "per-poffice":{
+						required: !0,
+						minlength: 3
+					},
+                    "per-thana":{
+						required: !0,
+						minlength: 3
+					},
+                    "per-upzilla":{
+						required: !0,
+						minlength: 3
+					},
+                    "per-zilla":{
+						required: !0,
+						minlength: 3
+					},
+                    "per-division":{
+						required: !0,
+						minlength: 3
+					},
+                    "pre-village":{
+						required: !0,
+						minlength: 3
+					},
+                    "pre-poffice":{
+						required: !0,
+						minlength: 3
+					},
+                    "pre-thana":{
+						required: !0,
+						minlength: 3
+					},
+                    "pre-upzilla":{
+						required: !0,
+						minlength: 3
+					},
+                    "pre-zilla":{
+						required: !0,
+						minlength: 3
+					},
+                    "pre-division":{
+						required: !0,
+						minlength: 3
+					},
+                    "password":{
+						required: !0,
+						minlength: 6
+					},
+                    "confirm-password":{
+						required: !0,
+						equalTo:"#password"
+					},
                 },
                 messages: {
-                    "val-username": {
-                        required: "Please enter a username",
-                        minlength: "Your username must consist of at least 3 characters"
+					"bgroup": "Please select a blood group from dropdown list",
+                    "gender": "Please select a gender",
+                    "religion": "Please select a religin from dropdown list",
+					"password": {
+                        required: "Please enter password",
+                        minlength: "Your password must consist of at least 6 characters"
                     },
-                    "val-email": "Please enter a valid email address",
-                    "val-password": {
-                        required: "Please provide a password",
-                        minlength: "Your password must be at least 5 characters long"
-                    },
-                    "val-confirm-password": {
-                        required: "Please provide a password",
-                        minlength: "Your password must be at least 5 characters long",
-                        equalTo: "Please enter the same password as above"
-                    },
-                    "val-select2": "Please select a value!",
-                    "val-select2-multiple": "Please select at least 2 values!",
-                    "val-suggestions": "What can we do to become better?",
-                    "val-skill": "Please select a skill!",
-                    "val-currency": "Please enter a price!",
-                    "val-website": "Please enter your website!",
-                    "val-phoneus": "Please enter a US phone!",
-                    "val-digits": "Please enter only digits!",
-                    "val-number": "Please enter a number!",
-                    "val-range": "Please enter a number between 1 and 5!",
-                    "val-terms": "You must agree to the service terms!"
+
+                    "confirm-password": "Please enter same password!",
                 }
             })
         }
