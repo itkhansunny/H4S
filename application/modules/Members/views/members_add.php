@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 13 03 2019, 5:01:46 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 18 03 2019, 12:20:35 AM
+ * Last Modified: 18 03 2019, 1:23:42 AM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -18,6 +18,16 @@ $this->load->view('header');
 	<div class="col-lg-12">
 		<div class="card">
 			<div class="card-body">
+			<?php if (validation_errors()) { ?>
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <span class="message"><?php echo validation_errors(); ?></span>
+            </div> <?php } ?>
+            <?php if (isset($error_insert)) { ?>
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <?php echo $error_insert; ?>
+            </div> <?php } ?>
 				<div class="form-validation">
 					<?php echo form_open('members/store', 'class="form-valide"'); ?>
 						<div class="form-group row">
@@ -122,19 +132,19 @@ $this->load->view('header');
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="occupation">Occupation <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="occupation" name="occupation" placeholder="Enter your occupation name..">
+								<input type="text" class="form-control" id="occupation" name="occupation" placeholder="Enter your occupation name..">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="institute">Institute name <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="institute" name="institute" placeholder="Enter your institute name..">
+								<input type="text" class="form-control" id="institute" name="institute" placeholder="Enter your institute name..">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="eduquali">Education qualification <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="eduquali" name="eduquali" placeholder="Enter your education qualification..">
+								<input type="text" class="form-control" id="eduquali" name="eduquali" placeholder="Enter your education qualification..">
 							</div>
 						</div>
 						<div class="form-group row">
@@ -148,37 +158,37 @@ $this->load->view('header');
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="per-village">Village <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="per-village" name="per-village" placeholder="Enter your village name..">
+								<input type="text" class="form-control" id="per-village" name="per-village" placeholder="Enter your village name..">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="per-poffice">Post Office <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="per-poffice" name="per-poffice" placeholder="Enter your post office name..">
+								<input type="text" class="form-control" id="per-poffice" name="per-poffice" placeholder="Enter your post office name..">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="per-thana">Thana <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="per-thana" name="per-thana" placeholder="Enter your thana name..">
+								<input type="text" class="form-control" id="per-thana" name="per-thana" placeholder="Enter your thana name..">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="per-upzilla">Upzilla <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="per-upzilla" name="per-upzilla" placeholder="Enter your upzilla name..">
+								<input type="text" class="form-control" id="per-upzilla" name="per-upzilla" placeholder="Enter your upzilla name..">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="per-zilla">Zilla <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="per-zilla" name="per-zilla" placeholder="Enter your zilla name..">
+								<input type="text" class="form-control" id="per-zilla" name="per-zilla" placeholder="Enter your zilla name..">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="per-division">Division <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="per-division" name="per-division" placeholder="Enter your division name..">
+								<input type="text" class="form-control" id="per-division" name="per-division" placeholder="Enter your division name..">
 							</div>
 						</div>
 						<hr>
@@ -186,37 +196,37 @@ $this->load->view('header');
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="pre-village">Village <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="pre-village" name="pre-village" placeholder="Enter your village name..">
+								<input type="text" class="form-control" id="pre-village" name="pre-village" placeholder="Enter your village name..">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="pre-poffice">Post Office <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="pre-poffice" name="pre-poffice" placeholder="Enter your post office  name..">
+								<input type="text" class="form-control" id="pre-poffice" name="pre-poffice" placeholder="Enter your post office  name..">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="pre-thana">Thana <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="pre-thana" name="pre-thana" placeholder="Enter your valid thana name..">
+								<input type="text" class="form-control" id="pre-thana" name="pre-thana" placeholder="Enter your valid thana name..">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="pre-upzilla">Upzilla <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="pre-upzilla" name="pre-upzilla" placeholder="Enter your upzilla name..">
+								<input type="text" class="form-control" id="pre-upzilla" name="pre-upzilla" placeholder="Enter your upzilla name..">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="pre-zilla">Zilla <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="pre-zilla" name="pre-zilla" placeholder="Enter your zilla name..">
+								<input type="text" class="form-control" id="pre-zilla" name="pre-zilla" placeholder="Enter your zilla name..">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="pre-division">Division <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="pre-division" name="pre-division" placeholder="Enter your division name..">
+								<input type="text" class="form-control" id="pre-division" name="pre-division" placeholder="Enter your division name..">
 							</div>
 						</div>
 						<hr>

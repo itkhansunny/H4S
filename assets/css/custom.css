@@ -3,11 +3,17 @@
  * Created Date: 17 03 2019, 4:51:59 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 18 03 2019, 12:23:32 AM
+ * Last Modified: 18 03 2019, 1:21:34 AM
  * Modified By: Khan Sunny
  * -----
  * 
  */
+
+ /* Message Style  */
+
+span.message p{
+	color: red;
+}
 
  /* Bootstrap Date pciker */
 .datepicker td:last-child, .datepicker th:last-child{
