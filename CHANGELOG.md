@@ -23,3 +23,9 @@
 1. Add validation with phone and date
 2. Add validation message
 3. Add custom.css and custom.js files
+
+### 0.0.4 - [[19.03.2019]]()
+
+1. Add soroborno helper and 
+2. Add members model 
+3. Work with database

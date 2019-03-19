@@ -7,6 +7,8 @@ class Members extends CI_Controller {
 		{
 			parent::__construct();
 			//Load Dependencies
+			$this->load->model('Members_model','members');
+			
 	
 		}
 	
@@ -56,47 +58,46 @@ class Members extends CI_Controller {
 			$this->form_validation->set_rules('confirm-password','Confirm password','trim|required|min_length[3]|matches[password]');
 			
 			if ($this->form_validation->run()==FALSE) {
-				$data['msg'] = 'Something may wrong';
-				$this->load->view('members_add',$data);
+				$this->load->view('members_add');
 			}
 			else {
-					// if ($this->student_model->add_student_insert()){
-					// 	#File Upload
-					// 	$id = $this->db->insert_id();
-					// 	#Generate Student ID
-					// 	$stid=$this->student_model->get_student_id($id);
-					// 	$year=date('y');
-					// 	$sid=$year.$stid;
-					// 	mkdir("uploads/student/$sid",0775);
-					// 	#Update Student ID
-					// 	if($this->student_model->update_sid($id,$sid)){
-					// 		#Upload File To Student/**ID** Folder 
-					// 		$config['upload_path'] = './uploads/student/'.$sid;
-					// 		$config['allowed_types'] = 'gif|jpg|png';
-					// 		$config['max_size']	= '2024000';
-					// 		$new_name = date('dmY').time();
-					// 		$config['file_name'] = $new_name;
-					// 		$this->load->library('upload', $config);
-					// 		if (!$this->upload->do_upload()):
-					// 			$error = array('error' => $this->upload->display_errors());
-					// 			$this->load->view('header');
-					// 			$this->load->view('add', $error);
-					// 			$this->load->view('footer');
-					// 		endif;
-					// 			$upload_data = $this->upload->data(); //Returns array of containing all of the data related to the file you uploaded.
-					// 			$file_name = $upload_data['file_name'];
-					// 			$this->student_model->photo_name($id,$file_name);
-					// 			redirect('students');
-					// 		}
-					// 	}
-					// 	else{
-					// 		#insert error
-					// 		$data['error_insert'] = 'Something may wrong';
-					// 		$this->load->view('add_student',$data);
-					// 	}				
-					// 	}
+				if ($this->members->memberSave()){
+				#File Upload
+				$id = $this->db->insert_id();
+				#Generate Member ID
+				$mid=date('y').sprintf("%'03d", $variable)$id;
+					#Update Student ID
+					$this->members->updateMID($id,$mid);
+					if(mkdir("assets/upload/members/$mid",0775)){
+					#Upload File To Student/**ID** Folder 
+					$config['upload_path'] 	= './assets/upload/members/'.$mid;
+					$config['allowed_types']= 'jpg';
+					$config['max_size']	= '500';
+					$new_name = date('dmY').time();
+					$config['file_name'] = $new_name;
+					$this->load->library('upload', $config);
+						if (!$this->upload->do_upload('myfile')):
+							$data['msg_error'] = $this->upload->display_errors();
+							$this->load->view('members_add', $data);
+						endif;
+						$upload_data = $this->upload->data();
+						$file_name = $upload_data['file_name'];
+						$this->members->photo_name($id,$file_name);
+						redirect('members');
+						echo "ok";
+					}else{
+						$data['msg_error'] = 'Unable to create folder to store member\'s photo' ;
+						$this->load->view('members_add',$data);
 					}
+				}
+				else{
+					#insert error
+					$data['msg_error'] = 'Something may wrong';
+					$this->load->view('add_student',$data);
+				}				
+			}
 		}
+
 	
 		//Update one item
 		public function update( $id = NULL )

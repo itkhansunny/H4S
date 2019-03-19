@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 13 03 2019, 5:01:46 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 18 03 2019, 1:23:42 AM
+ * Last Modified: 18 03 2019, 5:46:41 PM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -18,18 +18,11 @@ $this->load->view('header');
 	<div class="col-lg-12">
 		<div class="card">
 			<div class="card-body">
-			<?php if (validation_errors()) { ?>
-            <div class="alert alert-danger alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <span class="message"><?php echo validation_errors(); ?></span>
-            </div> <?php } ?>
-            <?php if (isset($error_insert)) { ?>
-            <div class="alert alert-danger alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <?php echo $error_insert; ?>
-            </div> <?php } ?>
+			<?php echo msg_validation(); ?>
+			<?php if(isset($msg_error)) { echo msg_error($msg_error); } ?>
+			<?php if(isset($msg_success)) { echo msg_success($msg_success); } ?>
 				<div class="form-validation">
-					<?php echo form_open('members/store', 'class="form-valide"'); ?>
+					<?php echo form_open_multipart('members/store', 'class="form-valide"'); ?>
 						<div class="form-group row">
 							<label class="col-lg-4 col-form-label" for="name-bn">Name (Bangla) <span class="text-danger">*</span></label>
 							<div class="col-lg-8">
