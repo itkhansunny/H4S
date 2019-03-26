@@ -65,7 +65,7 @@ class Members extends CI_Controller {
 				#File Upload
 				$id = $this->db->insert_id();
 				#Generate Member ID
-				$mid=date('y').sprintf("%'03d", $variable)$id;
+				$mid=date('y').sprintf("%'03d", $variable).$id;
 					#Update Student ID
 					$this->members->updateMID($id,$mid);
 					if(mkdir("assets/upload/members/$mid",0775)){
