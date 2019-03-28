@@ -154,11 +154,11 @@ var form_validation = function() {
 
                     "confirm-password": "Please enter same password!",
                 }
-            })
+            });
         }
     return {
         init: function() {
-            e(), a(), jQuery(".js-select2").on("change", function() {
+            e(), a(), on("change", function() {
                 jQuery(this).valid()
             })
         }

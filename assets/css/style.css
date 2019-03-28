@@ -419,7 +419,6 @@ div.dt-button:hover:not(.disabled),
 a.dt-button:hover:not(.disabled) {
   background-color: #5873fe;
   background-image: none;
-  border: 1px solid #5873fe;
   box-shadow: none;
   color: #ffffff;
 }

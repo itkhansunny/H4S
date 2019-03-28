@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 13 03 2019, 1:35:27 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 18 03 2019, 12:24:48 AM
+ * Last Modified: 29 03 2019, 12:24:56 AM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -30,15 +30,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- nano scroller -->
         <script src="<?php echo base_url('assets/js/lib/menubar/sidebar.js'); ?>"></script>
 		<script src="<?php echo base_url('assets/js/lib/preloader/pace.min.js'); ?>"></script>
+
+
 		
 		<!-- sidebar -->
 		<script src="<?php echo base_url('assets/js/lib/select2/select2.full.min.js'); ?>"></script>
 		<script src="<?php echo base_url('assets/js/lib/form-validation/jquery.validate.min.js'); ?>"></script>
-		<script src="<?php //echo base_url('assets/js/lib/form-validation/jquery.validate-init.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/form-validation/jquery.validate-init.js'); ?>"></script>
 		<script src="<?php echo base_url('assets/js/lib/bootstrap-datepicker/bootstrap-datepicker.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/sweetalert/sweetalert.min.js'); ?>"></script>
 		<script src="<?php echo base_url('assets/js/lib/bootstrap.min.js'); ?>"></script>
 		<script src="<?php echo base_url('assets/js/scripts.js'); ?>"></script>
 		<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
-		
+
+		<script src="<?php echo base_url('assets/js/lib/data-table/datatables.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/data-table/buttons.dataTables.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/data-table/dataTables.buttons.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/data-table/buttons.flash.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/data-table/jszip.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/data-table/pdfmake.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/data-table/vfs_fonts.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/data-table/buttons.html5.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/data-table/buttons.print.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/data-table/datatables-init.js'); ?>"></script>
     </body>
 </html>

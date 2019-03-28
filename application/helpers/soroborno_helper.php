@@ -4,13 +4,13 @@
  * Created Date: 18 03 2019, 3:34:32 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 18 03 2019, 4:28:52 PM
+ * Last Modified: 28 03 2019, 10:50:55 AM
  * Modified By: Khan Sunny
  * -----
  * 
  */
 
-// Flash Message 
+#Form Validation Flash Message 
 function msg_validation()
 {
 	if (validation_errors()) {
@@ -21,7 +21,7 @@ function msg_validation()
 	}
 }
 
-
+#Error Flash Message 
 function msg_error($msg_error)
 {
 	return"<div class='alert alert-danger alert-dismissible' role='alert'>
@@ -31,7 +31,7 @@ function msg_error($msg_error)
 			"</div>";
 }
 
-
+#Success Flash Message 
 function msg_success($msg_success)
 {
 	if (isset($msg_success)) {
@@ -43,3 +43,8 @@ function msg_success($msg_success)
 	}
 }
 
+#Hash password with bcrypt 
+function passHash($password){
+    $options = ['cost' => 10];
+    return password_hash($password, PASSWORD_BCRYPT, $options);
+}

@@ -29,3 +29,7 @@
 1. Add soroborno helper and 
 2. Add members model 
 3. Work with database
+
+### 0.0.5 - [[29.03.2019]]()
+
+1. Member CURD system added

@@ -5,14 +5,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 18 03 2019, 5:08:23 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 19 03 2019, 1:37:20 AM
+ * Last Modified: 29 03 2019, 1:57:34 AM
  * Modified By: Khan Sunny
  * -----
  * 
  */
 class Members_model extends CI_Model{
+
+	#Member list query
+	public function memberList()
+	{
+		$query = $this->db->get('members');
+		$result = $query->result();
+		return $result;
+	}
 	
-	//Save member information
+	#Save member information
 	public function memberSave()
 	{
 		$attr=array(
@@ -43,7 +51,8 @@ class Members_model extends CI_Model{
 			'pre-upzilla'		=>$this->input->post('pre-upzilla'),
 			'pre-zilla'			=>$this->input->post('pre-zilla'),
 			'pre-division'		=>$this->input->post('pre-division'),
-			'password'			=>$this->input->post('password')
+			'password'			=> passHash($this->input->post('password')),
+			'cdate'				=> time(),
 		);
 		if($this->db->insert('members', $attr)){
 			return TRUE;
@@ -51,16 +60,46 @@ class Members_model extends CI_Model{
 			return FALSE;
 		}
 	}
-
+	
+	#Set Member id
 	public function updateMID($id, $mid)
 	{
-		
+		$this->db->where('id', $id);
+		$this->db->update('members', array('mid'=>$mid));
+	}
+	
+	#New uploaded photo path set to DB
+	public function setPhotoPath($id,$fileName)
+	{
+		$this->db->where('id', $id);
+		$this->db->update('members', array('path'=>$fileName));
 	}
 
-	public function getMemberID() {
-		// $result = $this->db->where('id', $id)-> get('student_m');
-		return sprintf("%02d",rand(10,100));
+	#Member information by id
+	public function getMemberInfo($id)
+	{
+		return $this->db->get_where('members',array('id' =>$id))->result();
+	}
+	
+	#Update member information store
+	public function updateStore($id,$data)
+	{
+		if($this->db->where('id',$id)->update('members',$data)){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
 	}
 
+	#Update member information
+	public function deleteMember($id)
+	{
+		if($this->db->delete('members',array('id' => $id))){
+			return TRUE;
+		}
+		else{
+			return FALSE;
+		}
+	}
 }
  
