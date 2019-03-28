@@ -30,6 +30,10 @@
 2. Add members model 
 3. Work with database
 
-### 0.0.5 - [[29.03.2019]]()
+### 0.0.5 - [[27.03.2019]]()
 
-1. Member CURD system added
+1. Fix Some error
+
+### 0.0.6 - [[29.03.2019]]()
+
+1. Member CURD system added and *.md files edit
