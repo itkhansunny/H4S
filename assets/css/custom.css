@@ -3,7 +3,7 @@
  * Created Date: 17 03 2019, 4:51:59 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 18 03 2019, 1:21:34 AM
+ * Last Modified: 26 06 2019, 4:57:55 AM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -45,4 +45,30 @@ span.message p{
   left: 0;
   top: 0;
   opacity: 0;
+}
+
+
+/* Responsive  */
+@media (max-width: 420px) {
+	
+	.hide-mobile {
+		margin-left: 0px !important
+	}
+
+	.sidebar-hide .sidebar.sidebar-shrink.sidebar-hide-to-small~.content-wrap {
+		margin-left: 0px;
+	}
+
+	.hamburger {
+		left:0px;
+	}
+	.sidebar-hide .sidebar.sidebar-hide-to-small {
+		position: absolute;
+		width: 0px;
+	}
+	.sidebar-hide .sidebar.sidebar-hide-to-small, .sidebar-hide .sidebar.sidebar-hide-to-small .nano, .sidebar-hide .sidebar.sidebar-hide-to-small .nano-content {
+		overflow: hidden;
+	}
+
+
 }

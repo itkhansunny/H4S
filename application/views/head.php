@@ -5,13 +5,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 13 03 2019, 2:03:44 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 13 03 2019, 2:04:25 PM
+ * Last Modified: 26 06 2019, 4:30:50 AM
  * Modified By: Khan Sunny
  * -----
  * 
  */
 ?>
-<div class="header">
+<div class="header hide-mobile">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">

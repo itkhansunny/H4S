@@ -911,7 +911,7 @@ a.dt-button.active:not(.disabled) {
 /*  Responsive*/
 @media (min-width: 320px) and (max-width: 679px) {
   .sidebar {
-    top: 50px;
+    top: 75px;
   }
 }
 .map {
