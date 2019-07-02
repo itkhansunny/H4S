@@ -3,7 +3,7 @@
  * Created Date: 17 03 2019, 4:51:59 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 26 06 2019, 4:57:55 AM
+ * Last Modified: 27 06 2019, 12:31:24 AM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -47,6 +47,71 @@ span.message p{
   opacity: 0;
 }
 
+/* Book List */
+
+.book-image{
+	width: 180px;
+	float: left;
+}
+
+.book-info{
+	margin-left: 180px;
+}
+
+.book-title{
+	display: inline-block;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 0px 15px;
+}
+
+.book-author{
+	font-size: 14px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    color: #5873fe;
+}
+
+.book-author i{
+	font-size: 14px;
+    color: #5873fe;
+}
+
+.book-author span{
+	font-size: 14px;
+    margin-left: 7px;
+    color: #5873fe;
+}
+
+.book-available{
+	padding-left: 15px;
+}
+
+.book-available i{
+	background: green;
+    padding: 0px;
+    color: white;
+    border-radius: 50px;
+    font-size: 13px;
+}
+
+.book-available span{
+	font-size: 14px;
+    margin-left: 7px;
+    margin-bottom: 121px;
+}
+
+.book-category{
+	padding-left: 15px;
+	font-size:15px;
+	padding-bottom: 10px; 
+}
+
+.book-id{
+	padding-left: 15px;
+	font-size:15px;
+	padding-bottom: 10px; 
+}
 
 /* Responsive  */
 @media (max-width: 420px) {
@@ -70,5 +135,13 @@ span.message p{
 		overflow: hidden;
 	}
 
+	.book-info {
+		margin-left: 0;
+	}
 
+	.book-image {
+		width: 180px;
+		margin: 0 auto;
+		float: none;
+	}
 }

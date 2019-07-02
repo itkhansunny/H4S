@@ -37,3 +37,9 @@
 ### 0.0.6 - [[29.03.2019]]()
 
 1. Member CURD system added and *.md files edit
+
+### 0.0.7 - [[03.07.2019]]()
+
+1. Author CURD system added
+2. Category CURD system added
+3. Book list UI design

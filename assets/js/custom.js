@@ -3,7 +3,7 @@
  * Created Date: 17 03 2019, 4:54:58 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 29 03 2019, 1:54:14 AM
+ * Last Modified: 03 07 2019, 2:15:43 AM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -33,11 +33,15 @@ function readURL(input) {
 		reader.readAsDataURL(input.files[0]);
 	}
 }
+
 $("#imageUpload").change(function() {
 	readURL(this);
 });  
-document.querySelector('.sweet-success-cancel').onclick = function(){
+
+$(".button").on('click', function(event){
+	console.log('Clicked');
 	var url = $(this).attr('href');
+	console.log('Clicked');
     swal({
             title: "Are you sure to delete ?",
             text: "You will not be able to recover this member information !!",
@@ -57,4 +61,37 @@ document.querySelector('.sweet-success-cancel').onclick = function(){
                 swal("Cancelled !!", "Hey, your imaginary file is safe !!", "error");
             }
         });
-};
+});
+
+
+// $('#bootstrap').DataTable({
+// 	dom: 'lBfrtip',
+// 	lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
+// 	buttons: [
+// 		'copy', 'csv', 'excel', 'pdf', 'print'
+// 	]
+// });
+
+
+// (function ($) {
+//     //    "use strict";
+
+
+//     /*  Data Table
+//     -------------*/
+
+//  	// $('#bootstrap-data-table').DataTable();
+
+
+//     $('#bootstrap-data-table').DataTable({
+//         lengthMenu: [[10, 20, 50, -1], [10, 20, 50, "All"]],
+//     });
+
+
+
+//     $('#booklist').DataTable({
+//         dom: 'f',
+        
+//     });
+	
+// })(jQuery);

@@ -1,21 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /*
- * File: Member_model.php
+ * File: Library_model.php
  * Created Date: 18 03 2019, 5:08:23 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 03 07 2019, 1:13:50 AM
+ * Last Modified: 03 07 2019, 1:49:00 AM
  * Modified By: Khan Sunny
  * -----
  * 
  */
-class Members_model extends CI_Model{
+class Library_model extends CI_Model{
 
 	#Member list query
-	public function memberList()
+	public function bookList()
 	{
-		$query = $this->db->get('members');
+		$query = $this->db->get('books');
 		$result = $query->result();
 		return $result;
 	}
@@ -91,7 +91,7 @@ class Members_model extends CI_Model{
 		}
 	}
 
-	#Delete member information
+	#Update member information
 	public function deleteMember($id)
 	{
 		if($this->db->delete('members',array('id' => $id))){
@@ -101,5 +101,129 @@ class Members_model extends CI_Model{
 			return FALSE;
 		}
 	}
+
+	#Get Category list
+	public function getCategoryList()
+	{
+		$query = $this->db->get('category');
+		if ($query->num_rows() > 0) {
+			return $query->result();
+		}else{
+			return false;
+		}
+	}
+	
+	#Save category data
+	public function saveCategoryData()
+	{
+		$attr=array(
+			'name'			=>$this->input->post('name'),
+			'cdate'			=> time(),
+			'udate'			=> time(),
+		);
+		
+		if($this->db->insert('category', $attr)){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	#Get category data
+	public function getCategoryData($id)
+	{
+		$attr=array(
+			'id'			=>$id,
+		);
+		$query = $this->db->get_where('category',array('id'=>$id))->result();
+		if($query){
+			return $query;
+		}else{
+			return FALSE;
+		}
+	}
+
+	#Update category date store
+	public function updateCategoryStore($id,$data)
+	{
+		if($this->db->where('id',$id)->update('category',$data)){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	#Delete Category data
+	public function deleteCategory($id)
+	{
+		if($this->db->delete('category',array('id' => $id))){
+			return TRUE;
+		}
+		else{
+			return FALSE;
+		}
+	}
+	
+	#Get author list
+	public function getAuthorList()
+	{
+		$query = $this->db->get('author');
+		if ($query->num_rows() > 0) {
+			return $query->result();
+		}else{
+			return false;
+		}
+	}
+	
+	#Save author data
+	public function saveAuthorData()
+	{
+		$attr=array(
+			'name'			=>$this->input->post('name'),
+			'cdate'			=> time(),
+			'udate'			=> time(),
+		);
+		
+		if($this->db->insert('author', $attr)){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	#Get author data
+	public function getAuthorData($id)
+	{
+		$attr=array(
+			'id'			=>$id,
+		);
+		$query = $this->db->get_where('author',array('id'=>$id))->result();
+		if($query){
+			return $query;
+		}else{
+			return FALSE;
+		}
+	}
+
+	#Update author date store
+	public function updateAuthorStore($id,$data)
+	{
+		if($this->db->where('id',$id)->update('author',$data)){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	#Delete author data
+	public function deleteAuthor($id)
+	{
+		if($this->db->delete('author',array('id' => $id))){
+			return TRUE;
+		}
+		else{
+			return FALSE;
+		}
+	}
+
 }
- 

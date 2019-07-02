@@ -4,7 +4,7 @@
  * Created Date: 18 03 2019, 3:34:32 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 28 03 2019, 10:50:55 AM
+ * Last Modified: 03 07 2019, 1:27:59 AM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -21,25 +21,28 @@ function msg_validation()
 	}
 }
 
-#Error Flash Message 
-function msg_error($msg_error)
+#Flash Message 
+function flashMsg()
 {
-	return"<div class='alert alert-danger alert-dismissible' role='alert'>
-			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-			<span aria-hidden='true'>&times;</span></button>"
-			.$msg_error.
-			"</div>";
-}
-
-#Success Flash Message 
-function msg_success($msg_success)
-{
-	if (isset($msg_success)) {
-		return"<div class='alert alert-success alert-dismissible' role='alert'>
-			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-			<span aria-hidden='true'>&times;</span></button>"
-			.$msg_success.
-			"</div>";
+	$CI =& get_instance();
+	if ($CI->session->flashdata('msg_success')) {
+		echo "<div class='alert alert-success alert-dismissible' role='alert'>
+		<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+		<span aria-hidden='true'>&times;</span></button>"
+		.$CI->session->flashdata('msg_success').
+		"</div>";
+		if(isset($_SESSION['msg_success'])){
+			unset($_SESSION['msg_success']);
+		}
+	}else if($CI->session->flashdata('msg_error')){
+		echo "<div class='alert alert-danger alert-dismissible' role='alert'>
+		<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+		<span aria-hidden='true'>&times;</span></button>"
+		.$CI->session->flashdata('msg_error').
+		"</div>";
+		if(isset($_SESSION['msg_error'])){
+			unset($_SESSION['msg_error']);
+		}
 	}
 }
 
