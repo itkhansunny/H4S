@@ -3,11 +3,62 @@
  * Created Date: 17 03 2019, 4:51:59 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 27 06 2019, 12:31:24 AM
+ * Last Modified: 03 07 2019, 7:12:55 PM
  * Modified By: Khan Sunny
  * -----
  * 
  */
+/* sidebar */
+
+.sidebar{
+	background: #28a745;
+}
+
+.logo {
+    background: #28a745;
+}
+
+.logo span {
+	color: #020202;
+}
+
+.sidebar{
+	top:0px;
+}
+
+.sidebar-hide .sidebar.sidebar-hide-to-small {
+	top: 0px;
+}
+
+.sidebar .nano-content>ul>li.active>a, .sidebar .nano-content>ul>li.open>a, .sidebar .nano-content>ul>li>ul {
+	background: linear-gradient(to right, #28a745 , #28a745);
+}
+
+.sidebar .nano-content>ul li.label {
+	color: #090a0e;
+}
+
+.sidebar .nano-content>ul li.active>a::before {
+    background: #0a670d;
+}
+
+.sidebar .nano-content>ul li>a {
+	background: #28a745;
+	color: #ffffff;
+}
+
+.sidebar .nano-content>ul li>a:hover {
+    background: linear-gradient(to right, #28a745);
+}
+
+.sidebar .nano-content>ul li>a:hover {
+	background: #8EC63E;
+}
+
+.sidebar .nano-content>ul>li>ul>li.active>a, .sidebar .nano-content>ul>li>ul>li.open>a, .sidebar .nano-content>ul>li>ul>li>ul {
+	background: #8EC63E;
+	color: #090a0e;
+}
 
  /* Message Style  */
 
@@ -50,8 +101,12 @@ span.message p{
 /* Book List */
 
 .book-image{
-	width: 180px;
 	float: left;
+
+}
+.book-image img{
+	height: 180px !important;
+	width: 180px !important;
 }
 
 .book-info{
@@ -65,22 +120,21 @@ span.message p{
     padding: 0px 15px;
 }
 
-.book-author{
-	font-size: 14px;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    color: #5873fe;
+.book-author {
+	font-size: 15px;
+	color: #5873fe;
+	padding-bottom: 10px;
+	padding-left: 15px;
 }
 
 .book-author i{
-	font-size: 14px;
+	font-size: 12px;
     color: #5873fe;
+    font-weight: 800;
 }
 
 .book-author span{
-	font-size: 14px;
-    margin-left: 7px;
-    color: #5873fe;
+    font-weight: 300;
 }
 
 .book-available{
@@ -97,7 +151,6 @@ span.message p{
 
 .book-available span{
 	font-size: 14px;
-    margin-left: 7px;
     margin-bottom: 121px;
 }
 
@@ -120,6 +173,18 @@ span.message p{
 		margin-left: 0px !important
 	}
 
+	.hide-sm{
+		display: none;
+	}
+
+	.sidebar{
+		top:60px;
+	}
+
+	.sidebar-hide .sidebar.sidebar-hide-to-small {
+		top: 60px;
+	}
+
 	.sidebar-hide .sidebar.sidebar-shrink.sidebar-hide-to-small~.content-wrap {
 		margin-left: 0px;
 	}
@@ -137,10 +202,16 @@ span.message p{
 
 	.book-info {
 		margin-left: 0;
+		text-align: center;
 	}
-
+	
+	.book-author, .book-category, .book-available, .book-id{
+		text-align: left;
+	}
+	
 	.book-image {
 		width: 180px;
+		height: 180px;
 		margin: 0 auto;
 		float: none;
 	}

@@ -43,3 +43,7 @@
 1. Author CURD system added
 2. Category CURD system added
 3. Book list UI design
+
+### 0.0.8 - [[03.07.2019]]()
+
+1. Work with list data

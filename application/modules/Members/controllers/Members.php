@@ -28,36 +28,11 @@ class Members extends CI_Controller {
 		// Add a new item
 		public function store()
 		{
-			$this->form_validation->set_rules('name-bn','Bangla Name','trim|required|min_length[3]');
-			$this->form_validation->set_rules('name-en','English Name','trim|required|min_length[3]');
-			$this->form_validation->set_rules('fname','Father\'s Name','trim|required|min_length[3]');
-			$this->form_validation->set_rules('mname','Mother\'s Name','trim|required|min_length[3]');
-			$this->form_validation->set_rules('mobile','Mobile number','trim|required|min_length[3]');
-			$this->form_validation->set_rules('fbid','Facebook ID','trim|required|min_length[3]');
-			$this->form_validation->set_rules('email','Email','trim|required|min_length[3]|valid_email');
-			$this->form_validation->set_rules('bgroup','Blood Group','trim|required');
-			$this->form_validation->set_rules('dob','Date of Birth','trim|required|min_length[3]');
-			$this->form_validation->set_rules('gender','Gender','trim|required');
-			$this->form_validation->set_rules('religion','Religion','trim|required|min_length[3]');
-			$this->form_validation->set_rules('occupation','Occupation Name','trim|required|min_length[3]');
-			$this->form_validation->set_rules('institute','Institute Name','trim|required|min_length[3]');
-			$this->form_validation->set_rules('eduquali','Education Qualification','trim|required|min_length[3]');
-			$this->form_validation->set_rules('nidno','National ID Card Number','trim|required|min_length[3]|numeric');
-			$this->form_validation->set_rules('per-village','Permanent village', 'trim|required|min_length[3]');
-			$this->form_validation->set_rules('per-poffice','Permanent post office', 'trim|required|min_length[3]');
-			$this->form_validation->set_rules('per-thana','Permanent thana', 'trim|required|min_length[3]');
-			$this->form_validation->set_rules('per-upzilla','Permanent upzilla', 'trim|required|min_length[3]');
-			$this->form_validation->set_rules('per-zilla','Permanent zilla', 'trim|required|min_length[3]');
-			$this->form_validation->set_rules('per-division','Permanent division', 'trim|required|min_length[3]');
-			$this->form_validation->set_rules('pre-village','Present village', 'trim|required|min_length[3]');
-			$this->form_validation->set_rules('pre-poffice','Present post office', 'trim|required|min_length[3]');
-			$this->form_validation->set_rules('pre-thana','Present thana', 'trim|required|min_length[3]');
-			$this->form_validation->set_rules('pre-upzilla','Present upzilla', 'trim|required|min_length[3]');
-			$this->form_validation->set_rules('pre-zilla','Present zilla', 'trim|required|min_length[3]');
-			$this->form_validation->set_rules('pre-division','Present division', 'trim|required|min_length[3]');
-			$this->form_validation->set_rules('password','Password','trim|required|min_length[3]');
-			$this->form_validation->set_rules('confirm-password','Confirm password','trim|required|min_length[3]|matches[password]');
-
+			$this->form_validation->set_rules('name','Book Name','trim|required|min_length[3]');
+			$this->form_validation->set_rules('category','Category Name','trim|required');
+			$this->form_validation->set_rules('author','Author Name','trim|required');
+			$this->form_validation->set_rules('tbook','Total number of book','trim|required');
+			
 			if ($this->form_validation->run()==FALSE) {
 				$this->load->view('members_add');
 			}

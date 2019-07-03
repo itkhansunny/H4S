@@ -8,6 +8,7 @@ class Library extends CI_Controller {
 			parent::__construct();
 			//Load Dependencies
 			$this->load->model('Library_model','library');
+			$this->load->model('Home/Home_model','home');
 		}
 	
 		// List all your books
@@ -15,6 +16,89 @@ class Library extends CI_Controller {
 		{
 			$data['bookData'] = $this->library->bookList();
 			$this->load->view('book_list', $data);
+		}
+
+		// Add book
+		public function addBook()
+		{
+			$data['categoriesData'] = $this->library->getCategoryList();
+			$data['authorsData'] = $this->library->getAuthorList();
+			$this->load->view('book_add', $data);
+			
+		}
+
+		// Store book
+		public function storeBook()
+		{
+			$this->form_validation->set_rules('name','Book Name','trim|required|min_length[3]');
+			$this->form_validation->set_rules('category','Category Name','trim|required');
+			$this->form_validation->set_rules('author','Author Name','trim|required');
+			$this->form_validation->set_rules('tbook','Total number of book','trim|required');
+			$this->form_validation->set_rules('bookid','Book ID','trim|required');
+			$this->form_validation->set_rules('isbn','Book ISBN','trim');
+			
+			if ($this->form_validation->run()==FALSE) {
+				$data['categoriesData'] = $this->library->getCategoryList();
+				$data['authorsData'] = $this->library->getAuthorList();
+				$this->load->view('book_add',$data);
+			}
+			else {
+					if ($this->library->bookSave()){
+					#Image Upload
+					$id = $this->db->insert_id();
+					$bid= $this->input->post('bookid');
+					if(!is_dir("assets/upload/books/$bid")){
+						if(mkdir("assets/upload/books/$bid",0775)){
+							$config['upload_path'] 	= './assets/upload/books/'.$bid;
+							$config['allowed_types']= 'jpg';
+							$config['max_size']	= '500';
+							$new_name = date('dmY').time();
+							$config['file_name'] = $new_name;
+							$this->load->library('upload', $config);
+								if (!$this->upload->do_upload('bookImage')):
+									$data['msg_error'] = $this->upload->display_errors();
+									$this->load->view('books_add', $data);
+								endif;
+								$upload_data = $this->upload->data();
+								$file_name = $upload_data['file_name'];
+								if($this->library->setPhotoPath($id,$file_name)){
+									redirect('library/bookList');
+								}else{
+									$data['msg_error'] = 'Unable to upload and update book\'s image' ;
+									$this->load->view('book_add',$data);
+								}
+							}else{
+								$data['msg_error'] = 'Unable to create folder to store book\'s image' ;
+								$this->load->view('book_add',$data);
+							}
+					}else{
+						$config['upload_path'] 	= './assets/upload/books/'.$bid;
+						$config['allowed_types']= 'jpg';
+						$config['max_size']	= '500';
+						$new_name = date('dmY').time();
+						$config['file_name'] = $new_name;
+						$this->load->library('upload', $config);
+							if (!$this->upload->do_upload('bookImage')):
+								$data['msg_error'] = $this->upload->display_errors();
+								$this->load->view('books_add', $data);
+							endif;
+							$upload_data = $this->upload->data();
+							$file_name = $upload_data['file_name'];
+							if($this->library->setPhotoPath($id,$file_name)){
+								redirect('library/bookList');
+							}else{
+								$data['msg_error'] = 'Unable to upload and update book\'s image' ;
+								$this->load->view('book_add',$data);
+							}
+							
+					}
+				}
+				else{
+					#insert error
+					$data['msg_error'] = 'Something may wrong';
+					$this->load->view('book_add',$data);
+				}				
+			}
 		}
 	
 		// Create category

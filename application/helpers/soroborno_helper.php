@@ -4,7 +4,7 @@
  * Created Date: 18 03 2019, 3:34:32 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 03 07 2019, 1:27:59 AM
+ * Last Modified: 03 07 2019, 2:12:02 PM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -50,4 +50,16 @@ function flashMsg()
 function passHash($password){
     $options = ['cost' => 10];
     return password_hash($password, PASSWORD_BCRYPT, $options);
+}
+
+#Return value from db by argument
+function getValue($table,$query,$key,$value)
+{
+	$CI =& get_instance();
+	$CI->load->model('Home_model','home');
+	if($CI->home->getValue($table,$query,$key,$value)){
+		return $CI->home->getValue($table,$query,$key,$value);
+	}else{
+		return FALSE;
+	}
 }

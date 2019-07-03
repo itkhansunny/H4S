@@ -12,6 +12,7 @@
 * 0.0.5 -- [27-03-2019]() - Fix Error
 * 0.0.6 -- [29-03-2019]() - Member CURD system added and *.md files edit
 * 0.0.7 -- [03-07-2019]() - Work with category, author & Book list view UI
+* 0.0.7 -- [03-07-2019]() - Work with list data
 
 ## Change Log
 

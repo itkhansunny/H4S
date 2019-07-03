@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 18 03 2019, 5:08:23 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 03 07 2019, 1:49:00 AM
+ * Last Modified: 03 07 2019, 12:42:29 PM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -20,59 +20,34 @@ class Library_model extends CI_Model{
 		return $result;
 	}
 	
-	#Save member information
-	public function memberSave()
+	#Save book information
+	public function bookSave()
 	{
 		$attr=array(
-			'name-bn'			=>$this->input->post('name-bn'),
-			'name-en'			=>$this->input->post('name-en'),
-			'fname'				=>$this->input->post('fname'),
-			'mname'				=>$this->input->post('mname'),
-			'mobile'			=>$this->input->post('mobile'),
-			'fbid'				=>$this->input->post('fbid'),
-			'email'				=>$this->input->post('email'),
-			'bgroup'			=>$this->input->post('bgroup'),
-			'dob'				=>$this->input->post('dob'),
-			'gender'			=>$this->input->post('gender'),
-			'religion'			=>$this->input->post('religion'),
-			'occupation'		=>$this->input->post('occupation'),
-			'institute'			=>$this->input->post('institute'),
-			'eduquali'			=>$this->input->post('eduquali'),
-			'nidno'				=>$this->input->post('nidno'),
-			'per-village'		=>$this->input->post('per-village'),
-			'per-poffice'		=>$this->input->post('per-poffice'),
-			'per-thana'			=>$this->input->post('per-thana'),
-			'per-upzilla'		=>$this->input->post('per-upzilla'),
-			'per-zilla'			=>$this->input->post('per-zilla'),
-			'per-division'		=>$this->input->post('per-division'),
-			'pre-village'		=>$this->input->post('pre-village'),
-			'pre-poffice'		=>$this->input->post('pre-poffice'),
-			'pre-thana'			=>$this->input->post('pre-thana'),
-			'pre-upzilla'		=>$this->input->post('pre-upzilla'),
-			'pre-zilla'			=>$this->input->post('pre-zilla'),
-			'pre-division'		=>$this->input->post('pre-division'),
-			'password'			=> passHash($this->input->post('password')),
-			'cdate'				=> time(),
+			'name'			=>$this->input->post('name'),
+			'catid'			=>$this->input->post('category'),
+			'authid'		=>$this->input->post('author'),
+			'tbook'			=>$this->input->post('tbook'),
+			'bookid'		=>$this->input->post('bookid'),
+			'isbn'			=>$this->input->post('isbn'),
+			'cdate'			=> time(),
 		);
-		if($this->db->insert('members', $attr)){
+		if($this->db->insert('books', $attr)){
 			return TRUE;
 		}else{
 			return FALSE;
 		}
 	}
 	
-	#Set Member id
-	public function updateMID($id, $mid)
-	{
-		$this->db->where('id', $id);
-		$this->db->update('members', array('mid'=>$mid));
-	}
-	
 	#New uploaded photo path set to DB
 	public function setPhotoPath($id,$fileName)
 	{
 		$this->db->where('id', $id);
-		$this->db->update('members', array('path'=>$fileName));
+		if($this->db->update('books', array('img_path'=>$fileName))){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
 	}
 
 	#Member information by id
