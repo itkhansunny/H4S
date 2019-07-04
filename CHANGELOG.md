@@ -47,3 +47,8 @@
 ### 0.0.8 - [[03.07.2019]]()
 
 1. Work with list data
+
+### 0.0.9 - [[04.07.2019]]()
+
+1. Edit in Home controller
+2. Working with main website home page
