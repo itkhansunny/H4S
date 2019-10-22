@@ -52,3 +52,8 @@
 
 1. Edit in Home controller
 2. Working with main website home page
+
+### 0.0.10 - [[31.08.2019]]()
+
+1. Add DB Backup Restore system
+2. Delete unnecessary files
