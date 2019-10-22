@@ -3,7 +3,7 @@
  * Created Date: 17 03 2019, 4:54:58 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 03 07 2019, 2:15:43 AM
+ * Last Modified: 22 10 2019, 5:20:39 AM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -38,29 +38,69 @@ $("#imageUpload").change(function() {
 	readURL(this);
 });  
 
-$(".button").on('click', function(event){
-	console.log('Clicked');
+//# Delete confirmation via sweet alert
+$(".sweet-success-cancel").on('click', function(event){
 	var url = $(this).attr('href');
-	console.log('Clicked');
     swal({
             title: "Are you sure to delete ?",
             text: "You will not be able to recover this member information !!",
             type: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
+            confirmButtonColor: "Crimson",
             confirmButtonText: "Yes, delete it !!",
             cancelButtonText: "No, cancel it !!",
             closeOnConfirm: false,
             closeOnCancel: false
         },
         function(isConfirm){
-            if (isConfirm) {
-				window.location.replace(url);
-            }
-            else {
-                swal("Cancelled !!", "Hey, your imaginary file is safe !!", "error");
-            }
+			if (isConfirm){
+			$.ajax({
+				url: url,
+				type: "POST",
+				success: function () {
+					swal({title: "Done!",text: "It was successfully deleted!",type: "success"},function () {
+						location.reload();
+					});
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+					swal("Error deleting!", "Please try again", "error");
+				}
+			});
+			}else{
+				swal("Canceled!", "Your data is safe!", "info");
+			}
         });
+});
+
+//# Member type chooser radio button
+$(function() {
+	$("#form-1").hide();
+	$("#form-2").hide();
+	$("#form-"+$("[checked]").val()).show('slow');
+    $("[name=reg-type]").click(function(){
+            $('.member-regi').hide();
+            $("#form-"+$(this).val()).show('slow');
+    });
+});
+
+//# Event start Selector
+$('#starttime').bootstrapMaterialDatePicker({ 
+	weekStart : 0,
+	shortTime:true,
+	format : 'DD/MM/YYYY hh:mm A',
+	clearButton:true,
+	nowButton:true,
+	switchOnClick:true
+});
+
+//# Event end Selector
+$('#endtime').bootstrapMaterialDatePicker({ 
+	weekStart : 0,
+	shortTime:true,
+	format : 'DD/MM/YYYY hh:mm A',
+	clearButton:true,
+	nowButton:true,
+	switchOnClick:true
 });
 
 

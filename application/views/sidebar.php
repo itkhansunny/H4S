@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 13 03 2019, 2:01:48 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 03 07 2019, 12:33:08 PM
+ * Last Modified: 20 10 2019, 7:26:13 AM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -35,6 +35,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li><a href="<?php echo base_url();?>library/author">Author</a></li>
 						<li><a href="<?php echo base_url();?>library/addBook">Book Add</a></li>
 						<li><a href="<?php echo base_url();?>library/bookList">Book List</a></li>
+					</ul>
+				</li>
+				<li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Events <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+					<ul>
+						<li><a href="<?php echo base_url();?>events/add">Add Events</a></li>
+						<li><a href="<?php echo base_url();?>events/upcoming">Upcoming Events</a></li>
+						<li><a href="<?php echo base_url();?>events/past">Past Events</a></li>
 					</ul>
 				</li>
 				<li><a href="../documentation/index.html"><i class="ti-file"></i> Documentation</a></li>

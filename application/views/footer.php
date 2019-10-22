@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 13 03 2019, 1:35:27 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 03 07 2019, 2:09:09 AM
+ * Last Modified: 21 10 2019, 4:21:47 PM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -38,6 +38,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<script src="<?php echo base_url('assets/js/lib/bootstrap-datepicker/bootstrap-datepicker.min.js'); ?>"></script>
 		<script src="<?php echo base_url('assets/js/lib/sweetalert/sweetalert.min.js'); ?>"></script>
 		<script src="<?php echo base_url('assets/js/lib/bootstrap.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/moment/moment.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/lib/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.js'); ?>"></script>
+
 		<script src="<?php echo base_url('assets/js/scripts.js'); ?>"></script>
 		<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
 

@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 28 03 2019, 11:05:33 AM
  * Author: Khan Sunny
  * -----
- * Last Modified: 29 03 2019, 1:52:38 AM
+ * Last Modified: 20 10 2019, 6:20:35 AM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -36,7 +36,7 @@ $this->load->view('header');?>
                                                     <td><?php echo $count; ?> </td>
                                                     <td><?php echo $data->name_en; ?> </td>
                                                     <td><?php echo $data->mid; ?></td>
-													<td><?php echo $data->pre_village.', '.$data->pre_thana.', '.$data->pre_zilla.', '.$data->pre_division; ?></td>
+													<td><?php echo $data->address; ?></td>
                                                     <td><?php echo $data->email; ?></td>
                                                     <td><?php echo $data->mobile; ?></td>
                                                     <td>

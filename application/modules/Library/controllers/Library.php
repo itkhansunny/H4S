@@ -54,10 +54,13 @@ class Library extends CI_Controller {
 							$config['max_size']	= '500';
 							$new_name = date('dmY').time();
 							$config['file_name'] = $new_name;
+							if($this->input->post('bookImage')==null){
+								$config['file_name'] = "";
+							}
 							$this->load->library('upload', $config);
 								if (!$this->upload->do_upload('bookImage')):
 									$data['msg_error'] = $this->upload->display_errors();
-									$this->load->view('books_add', $data);
+									$this->load->view('book_add', $data);
 								endif;
 								$upload_data = $this->upload->data();
 								$file_name = $upload_data['file_name'];
@@ -77,10 +80,13 @@ class Library extends CI_Controller {
 						$config['max_size']	= '500';
 						$new_name = date('dmY').time();
 						$config['file_name'] = $new_name;
+						if($this->input->post('bookImage')==null){
+							$config['file_name'] = "";
+						}
 						$this->load->library('upload', $config);
 							if (!$this->upload->do_upload('bookImage')):
 								$data['msg_error'] = $this->upload->display_errors();
-								$this->load->view('books_add', $data);
+								$this->load->view('book_add', $data);
 							endif;
 							$upload_data = $this->upload->data();
 							$file_name = $upload_data['file_name'];

@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Created Date: 13 03 2019, 1:35:11 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 28 03 2019, 11:41:46 PM
+ * Last Modified: 21 10 2019, 3:39:52 PM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -29,7 +29,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Standard iPad Touch Icon-->
         <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
         <!-- Standard iPhone Touch Icon-->
-        <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+		<link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+		<!-- fonts -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <!-- Styles -->
         <link href="<?php echo base_url('assets/css/lib/calendar2/pignose.calendar.min.css'); ?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/lib/chartist/chartist.min.css'); ?>" rel="stylesheet">
@@ -44,6 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <link href="<?php echo base_url('assets/css/lib/data-table/buttons.bootstrap.min.css'); ?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/lib/sweetalert/sweetalert.css'); ?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/lib/bootstrap.min.css'); ?>" rel="stylesheet">
+        <link href="<?php echo base_url('assets/css/lib/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.css'); ?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/lib/helper.css'); ?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/css/style.css'); ?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/css/custom.css'); ?>" rel="stylesheet">

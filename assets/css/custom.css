@@ -3,7 +3,7 @@
  * Created Date: 17 03 2019, 4:51:59 PM
  * Author: Khan Sunny
  * -----
- * Last Modified: 03 07 2019, 7:12:55 PM
+ * Last Modified: 21 10 2019, 5:07:07 PM
  * Modified By: Khan Sunny
  * -----
  * 
@@ -11,11 +11,11 @@
 /* sidebar */
 
 .sidebar{
-	background: #28a745;
+	background: #256966;
 }
 
 .logo {
-    background: #28a745;
+    background: #256966;
 }
 
 .logo span {
@@ -31,7 +31,7 @@
 }
 
 .sidebar .nano-content>ul>li.active>a, .sidebar .nano-content>ul>li.open>a, .sidebar .nano-content>ul>li>ul {
-	background: linear-gradient(to right, #28a745 , #28a745);
+	background: linear-gradient(to right, #28a745 , #256966);
 }
 
 .sidebar .nano-content>ul li.label {
@@ -39,11 +39,11 @@
 }
 
 .sidebar .nano-content>ul li.active>a::before {
-    background: #0a670d;
+    background: #256966;
 }
 
 .sidebar .nano-content>ul li>a {
-	background: #28a745;
+	background: #256966;
 	color: #ffffff;
 }
 
@@ -52,11 +52,11 @@
 }
 
 .sidebar .nano-content>ul li>a:hover {
-	background: #8EC63E;
+	background: #28a745;
 }
 
 .sidebar .nano-content>ul>li>ul>li.active>a, .sidebar .nano-content>ul>li>ul>li.open>a, .sidebar .nano-content>ul>li>ul>li>ul {
-	background: #8EC63E;
+	background: #28a745;
 	color: #090a0e;
 }
 
@@ -215,4 +215,55 @@ span.message p{
 		margin: 0 auto;
 		float: none;
 	}
+}
+
+/* Events  */
+
+.event-time-filed{
+	margin-left: -90px;
+    margin-top: -10px;
+}
+
+/* Material Date Time Picker */
+.dtp-btn-now{
+    margin-right: 8px;
+    background: #fff;
+}
+
+.dtp-btn-now:hover, .dtp-btn-now:focus{
+	background: #5873fe;
+	border-color: #5873fe;
+	color: #000000;
+}
+
+.dtp-btn-clear{
+	margin-right: 8px;
+	background: #fff;
+}
+
+.dtp-btn-clear:hover, .dtp-btn-clear:focus{
+	background: #03a9f4;
+	border-color: #03a9f4;
+	color: #000000;
+}
+
+.dtp-btn-cancel{
+	margin-right: 8px;
+	background: #fff;
+}
+
+.dtp-btn-cancel:hover,.dtp-btn-cancel:focus{
+	background: #dc3545;
+	border-color: #dc3545;
+	color: #000000;
+}
+
+.dtp-btn-ok{
+	background: #fff;
+}
+
+.dtp-btn-ok:hover{
+	background: #28a745;
+	border-color: #28a745;
+	color: #000000;
 }
