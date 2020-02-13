@@ -2,6 +2,7 @@
 
 >Hands for society
 
+[![time tracker](https://wakatime.com/badge/github/itkhansunny/h4s.svg)](https://wakatime.com/badge/github/itkhansunny/h4s)
 
 ## Release History
 
